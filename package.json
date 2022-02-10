@@ -1,0 +1,33 @@
+{
+  "name": "indulge_squad_z",
+  "version": "1.0.0",
+  "description": "Improve the internship and job application process of CDC/SCPT",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandeepKumarAuddy/Indulge_Squad_Z.git"
+  },
+  "author": "Squad_Z",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SandeepKumarAuddy/Indulge_Squad_Z/issues"
+  },
+  "homepage": "https://github.com/SandeepKumarAuddy/Indulge_Squad_Z#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.1",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
