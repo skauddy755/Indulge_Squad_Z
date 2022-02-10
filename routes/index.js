@@ -4,11 +4,7 @@ const express = require("express"),
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.status(200)
-       .json({
-           message: "Hi there",
-           auth: 0
-       })
+    res.render("index.ejs");
 });
 
 router.post('/', (req, res) => {
