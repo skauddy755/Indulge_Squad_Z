@@ -7,10 +7,10 @@ const webKeys     = require("./config/webKeys.js"),
 
 const app = new express();
 
-// const mongo_uri = process.env.MONGO_URI_PROD;
-// console.log(mongo_uri);
-// console.log(process.env.NODE_ENV);
-// mongoose.connect(mongo_uri, {useUnifiedTopology:true, useNewUrlParser:true});
+const mongo_uri = process.env.MONGO_URI_PROD;
+console.log(mongo_uri);
+console.log(process.env.NODE_ENV);
+mongoose.connect(mongo_uri, {useUnifiedTopology:true, useNewUrlParser:true});
 
 app.set("view engine", "ejs");
 app.use(express.json());
