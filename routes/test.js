@@ -3,17 +3,18 @@ const express = require("express"),
 
 const router = express.Router();
 
-router.get('/test/testPage', (req, res) => {
+router.get('/testPage', (req, res) => {
     res.render("register.ejs");
 });
 
-router.post('/test/testPage', (req, res) => {
+router.post('/testPage', (req, res) => {
     console.log(req.body);
     res.redirect("/testPage")
 });
 
-router.get('test/testejs', (req, res) => {
-    res.render('register.ejs');
+router.get('/testejs', (req, res) => {
+    // res.render('register.ejs');
+    res.redirect("/reg");
 });
 
 module.exports = router;
