@@ -5,6 +5,7 @@ const USER_ROLES = require('../config/webKeys').USER_ROLES
 
 var studentSchema = new mongoose.Schema({
 	// userId: String, // id of user schema
+    full_name: String,
     official_email: String,
     personal_email: String,
     contact: String,

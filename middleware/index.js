@@ -7,8 +7,8 @@ const express           = require("express"),
       flash             = require('connect-flash'),
       dotenv            = require("dotenv").config();
 
-const webKeys           = require("./config/webKeys.js"),
-      seedDB            = require("./config/seedDB.js");
+const webKeys           = require("../config/webKeys.js"),
+      seedDB            = require("../config/seedDB.js");
 
 const User              = require("../models/user"),
       Admin             = require("../models/admin"),
@@ -32,7 +32,7 @@ middlewareObj.isLoggedIn = function(req, res, next)
     else
     {
         req.flash("error", "You need to be signed-in to do that...!!!");
-        res.redirect("/login");   
+        res.redirect("/index/login");   
     }
 }
 
@@ -46,7 +46,7 @@ middlewareObj.checkOwnership = function(req, res, next)
     {
         req.flash("error", "You don't have permission to do that...!!!");
         req.flash("success", "");
-        res.redirect("/home");
+        res.redirect("/index/home");
     }
 }
 

@@ -1,5 +1,5 @@
 const express           = require("express"),
-      passport          = require('passport')  
+      passport          = require('passport'),
       localStrategy     = require('passport-local'),
       path              = require('path'),
       mongoose          = require("mongoose"),
@@ -63,12 +63,13 @@ app.use(function(req, res, next){
 // ================================================================
 // Serve static assets and use routes:
 // ================================================================
-app.use("/", express.static(path.join(__dirname, 'public')));
+app.use("/static/", express.static(path.join(__dirname, 'public', 'assets1')));
 
 // Use routes:
 //-----------------------------------------------------------------
 app.use("/test", require('./routes/test'));
 app.use("/index", require('./routes/index'));
+app.use("/company", require('./routes/company'));
 
 
 // ================================================================

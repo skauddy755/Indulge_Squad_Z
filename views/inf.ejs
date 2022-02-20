@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap Dashboard by Bootstrapious.com</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <script type="text/javascript">
+      function load_static_assets(exts, target) {
+          console.log("Loading static assets...");
+          var parent = document.getElementsByTagName(target)[0]; 
+          exts.forEach((ext) => {
+              var link = document.createElement('link');
+              for(attr in ext) link[attr] = ext[attr]
+              parent.appendChild(link);
+          });
+      }
+    </script>
+
+    <script>
+        var dir = window.location.origin + "/static/";
+        exts = [
+            {
+                tag: "link",
+                href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700",
+                rel: "stylesheet",
+                type: "text/css"
+            },
+            {
+                tag: "link",
+                href: dir + "vendor/choices.js/public/assets/styles/choices.min.css",
+                rel: "stylesheet"
+            },
+            {
+                tag: "link",
+                href: dir + "vendor/overlayscrollbars/css/OverlayScrollbars.min.css",
+                rel: "stylesheet"
+            },
+            {
+                tag: "link",
+                href: dir + "css/style.default.css",
+                rel: "stylesheet",
+                id: "theme-stylesheet"
+            },
+            {
+                tag: "link",
+                href: dir + "css/custom.css",
+                rel: "stylesheet"
+            },
+            {
+                tag: "link",
+                href: dir + "img/favicon.ico",
+                rel: "shortcut icon"
+            },
+        ];
+
+        console.log(exts);
+        load_static_assets(exts, 'head');
+    </script>
+
+    <!-- Google fonts - Roboto -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"> -->
+    <!-- Choices CSS-->
+    <!-- <link rel="stylesheet" href="vendor/choices.js/public/assets/styles/choices.min.css"> -->
+    <!-- Custom Scrollbar-->
+    <!-- <link rel="stylesheet" href="vendor/overlayscrollbars/css/OverlayScrollbars.min.css"> -->
+    <!-- theme stylesheet-->
+    <!-- <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet"> -->
+    <!-- Custom stylesheet - for your changes-->
+    <!-- <link rel="stylesheet" href="css/custom.css"> -->
+    <!-- Favicon-->
+    <!-- <link rel="shortcut icon" href="img/favicon.ico"> -->
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <!-- Sidebar Header    -->
+      <div class="sidebar-header d-flex align-items-center justify-content-center p-3 mb-3">
+        <!-- User Info-->
+        <div class="sidenav-header-inner text-center">
+          <!-- <img class="img-fluid rounded-circle avatar mb-3" src="img/avatar-7.jpg" alt="person"> -->
+          <h2 class="h5 text-white text-uppercase mb-0">Nathan_Andrews</h2>
+          <p class="text-sm mb-0 text-muted">HR | GOOGLE</p>
+        </div>
+        <!-- Small Brand information, appears on minimized sidebar--><a class="brand-small text-center" href="index.html">
+          <p class="h1 m-0">BD</p></a>
+      </div>
+      <!-- Sidebar Navigation Menus-->
+      <span class="text-uppercase text-gray-500 text-sm fw-bold letter-spacing-0 mx-lg-2 heading">Main</span>
+      <ul class="list-unstyled">                  
+        <li class="sidebar-item"><a class="sidebar-link" href="index.html"> 
+            <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
+              <use xlink:href="#real-estate-1"> </use>
+            </svg>My Profile </a></li>
+        
+        <li class="sidebar-item"><a class="sidebar-link" href="forms.html"> 
+          <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
+            <use xlink:href="#survey-1"> </use>
+          </svg>My Forms </a>
+        </li>
+        <li class="sidebar-item"><a class="sidebar-link" href="forms.html"> 
+          <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
+            <use xlink:href="#browser-window-1"> </use>
+          </svg>Fill INF </a>
+        </li>
+        <li class="sidebar-item"><a class="sidebar-link" href="forms.html"> 
+          <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
+            <use xlink:href="#browser-window-1"> </use>
+          </svg>Fill JNF </a>
+        </li>
+
+        <!-- <li class="sidebar-item"><a class="sidebar-link" href="#exampledropdownDropdown" data-bs-toggle="collapse"> 
+            <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
+              <use xlink:href="#browser-window-1"> </use>
+            </svg>Form fill up</a>
+          <ul class="collapse list-unstyled" id="exampledropdownDropdown">
+            <li><a class="sidebar-link" href="./jnf.html">JNF</a></li>
+            <li><a class="sidebar-link" href="./inf.html">INF</a></li> 
+          </ul> 
+        </li> -->
+        <li class="sidebar-item"><a class="sidebar-link" href="login.html"> 
+            <svg class="svg-icon svg-icon-sm svg-icon-heavy me-xl-2">
+              <use xlink:href="#disable-1"> </use>
+            </svg>Login page </a></li>
+        <li class="sidebar-item"><a class="sidebar-link" href="#!"> 
+            <svg class="svg-icon svg-icon-xs svg-icon-heavy me-xl-2">
+              <use xlink:href="#imac-screen-1"> </use>
+            </svg>Contact
+            <div class="badge bg-warning">6 New</div></a></li>
+        </ul>
+    </nav>
+    <div class="page">
+      <!-- navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between w-100">
+              <div class="d-flex align-items-center"><a class="menu-btn d-flex align-items-center justify-content-center p-2 bg-gray-900" id="toggle-btn" href="#">
+                  <svg class="svg-icon svg-icon-sm svg-icon-heavy text-white">
+                    <use xlink:href="#menu-1"> </use>
+                  </svg></a><a class="navbar-brand ms-2" href="index.html">
+                  <div class="brand-text d-none d-md-inline-block text-uppercase letter-spacing-0"><span class="text-white fw-normal text-xs">Bootstrap </span><strong class="text-primary text-sm">Dashboard</strong></div></a></div>
+              <ul class="nav-menu mb-0 list-unstyled d-flex flex-md-row align-items-md-center">
+
+                <!-- Log out-->
+                <li class="nav-item"><a class="nav-link text-white text-sm ps-0" href="login.html"> <span class="d-none d-sm-inline-block">Logout</span>
+                    <svg class="svg-icon svg-icon-xs svg-icon-heavy">
+                      <use xlink:href="#security-1"> </use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="bg-gray-200 text-sm">
+        <div class="container-fluid">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 py-3">
+              <li class="breadcrumb-item"><a class="fw-light" href="index.html">Home</a></li>
+              <li class="breadcrumb-item active fw-light" aria-current="page">Internship Notification Form</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- Page Header-->
+      <header class="py-4">
+        <div class="container-fluid py-2">
+          <h1 class="h3 fw-normal mb-0">Internship Notification Form</h1>
+        </div>
+      </header>
+      <!-- Forms Section-->
+      <section class="pb-5"> 
+        <div class="container-fluid">
+          <div class="row">
+            <!-- HR Info -->
+            <div class="col-lg-12 col-sm-12">
+              <div class="card">
+                <div class="card-header border-bottom" style="background-color: #c3decf;">
+                  <h3 style="font-size: x-large;" class="lead mb-0">HR info</h3>
+                </div>
+                <div class="card-body">
+                  <p class="text-sm lead">We'll never share your personal information with anyone else</p>
+                  
+                  <form id="poc_info">
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="email_poc1"><span style="color: maroon;">*</span> Email address of POC-1</label>
+                          <input class="form-control" name="email_poc1" id="email_poc1" type="email" aria-describedby="emailHelp" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="name_poc1"><span style="color: maroon;">*</span> Name of POC-1</label>
+                          <input class="form-control" name="name_poc1" id="name_poc1" type="string">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="designation_poc1"><span style="color: maroon;">*</span> Designation of POC-1</label>
+                          <input class="form-control" name="designation_poc1" id="designation_poc1" type="string">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="mob_poc1"><span style="color: maroon;">*</span> Mobile Number of POC-1</label>
+                          <input class="form-control" name="mob_poc1" id="mob_poc1" type="number">
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-sm-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="email_poc2">Email address of POC-2</label>
+                          <input class="form-control" name="email_poc2" id="email_poc2" type="email" aria-describedby="emailHelp" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="name_poc2">Name of POC-2</label>
+                          <input class="form-control" name="name_poc2" id="name_poc2" type="string">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="designation_poc2">Designation of POC-2</label>
+                          <input class="form-control" name="designation_poc2" id="designation_poc2" type="string">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="mob_poc2">Mobile Number of POC-2</label>
+                          <input class="form-control" name="mob_poc2" id="mob_poc2" type="number">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- Company Overview Form  -->
+            <div class="col-lg-6 col-sm-12">
+              <div class="card">
+                <div class="card-header border-bottom" style="background-color: #c3decf;">
+                  <h3 style="font-size: x-large;" class="lead mb-0">Company Overview</h3>
+                </div>
+                <div class="card-body">
+                  <!-- <p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p> -->
+                  <form id="company_overview" class="Job Notification Form">
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-3 form-label" for="companyName">Company Name</label>
+                      <div class="col-sm-9">
+                        <input class="form-control" name="companyName" id="companyName" type="string">
+                      </div>
+                    </div>
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-3 form-label" for="website">Website</label>
+                      <div class="col-sm-9">
+                        <input class="form-control" name="website" id="website" type="string">
+                      </div>
+                    </div>
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-3 form-label" for="industrySector">Industry Sector</label>
+                      <div class="col-sm-9">
+                        
+                        <input class="form-check-input" type="radio" name="industry_sector" id="is1">
+                        <label class="form-check-label px-1" for="is1">
+                          Analytics
+                        </label>
+                        <br>
+                        <input class="form-check-input" type="radio" name="industry_sector" id="is2">
+                        <label class="form-check-label px-1" for="is2">
+                          Consulting
+                        </label>
+                        <!-- </div> -->
+                        <br>
+                        <!-- <div class="my-1"> -->
+                        <input class="form-check-input" type="radio" name="industry_sector" id="is3">
+                        <label class="form-check-label px-1" for="is3">
+                          Core(Technical)
+                        </label>
+                        <br>
+                        <input class="form-check-input" type="radio" name="industry_sector" id="is4">
+                        <label class="form-check-label px-1" for="is4">
+                          BFSI
+                        </label>
+                        <!-- </div> -->
+                        <br>
+                        <!-- <div class="my-1"> -->
+                        <input class="form-check-input" type="radio" name="industry_sector" id="is5">
+                        <label class="form-check-label px-1" for="is5">
+                          IT/ Software
+                        </label>
+                        <br>
+                        <input class="form-check-input" type="radio" name="industry_sector" id="is6">
+                        <label class="form-check-label px-1" for="is6">
+                          Ed Tech
+                        </label>
+                        <!-- </div> -->
+                        <br>
+                        <!-- <div class="my-1"> -->
+                        <input class="form-check-input" type="radio" name="industry_sector" id="is7">
+                        <label class="form-check-label px-1" for="is7">
+                          E-commerce
+                        </label>
+                        <!-- </div> -->
+
+                        <!-- <input class="form-control my-3" id="inputHorizontalCompanyName" type="string" placeholder="other"> -->
+                        <div class="input-material-group mb-3">
+                          <input class="input-material" id="other_skill" type="" name="other_skill" required>
+                          <label class="label-material" for="other_skill">other</label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- Internship Duration -->
+            <div class="col-lg-6 col-sm-12">
+              <div class="card">
+                <div class="card-header border-bottom" style="background-color: #c3decf;">
+                  <h3 style="font-size: x-large;" class="lead mb-0">Internship Duration</h3>
+                </div>
+                <div class="card-body">
+                  <!-- <p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p> -->
+                  <form id="internship_duration" class="Job Notification Form">
+                    <div class="row gy-2 mb-4">
+                      <!-- <label class="col-sm-3 form-label" for="inputInternshipDuration">Internship Duration</label> -->
+                      <div class="col-sm-12">
+                        <div class="form-check">
+                          <input style="font-size: large;" class="form-check-input" type="checkbox" name="internship_duration" value="id0" id="id0">
+                          <label class="form-check-label" for="id0">
+                            <span style="font-size: large">Jan - Jun 2022</span><br>
+                            <b>Courses Eligibile:</b> Dual Degree / Integrated M. Tech courses only <br>
+                            <b>Graduation Batch:</b> 2022 batch
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input style="font-size: large;" class="form-check-input" type="checkbox" name="internship_duration" value="id1" id="id1">
+                          <label class="form-check-label" for="id1">
+                            <span style="font-size: large">May - July 2022</span><br>
+                            <b>Courses Eligibile:</b> ALL Pre-final year students of ALL courses <br>
+                            <b>Graduation Batch:</b> 2023 batch
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input style="font-size: large;" class="form-check-input" type="checkbox" name="internship_duration" value="id2" id="id2">
+                          <label class="form-check-label" for="id2">
+                            <span style="font-size: large">July - Dec 2022</span><br>
+                            <b>Courses Eligibile:</b> Final Year M.Tech/ MBA - Business Analytics courses only <br>
+                            <b>Graduation Batch:</b> 2022 batch
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Intern Profile Form-->
+            <div class="col-lg-6 col-sm-12">
+              <div class="card">
+                <div class="card-header border-bottom" style="background-color: #c3decf;">
+                  <h3 style="font-size: x-large;" class="lead mb-0">Intern Profile</h3>
+                </div>
+                <div class="card-body">
+                  <!-- <p class="text-sm">Lorem ipsum dolor sit amet consectetur.</p> -->
+                  <form id="intern_profile" class="Job Notification Form">
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-3 form-label" for="job_designation">Job Designation</label>
+                      <div class="col-sm-9">
+                        <input class="form-control" name="job_designation" id="job_designation" type="string">
+                      </div>
+                    </div>
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-3 form-label" for="job_desc">Job Description</label>
+                      <div class="col-sm-9">
+                        <input class="form-control" name="job_desc" id="job_desc" type="file">
+                      </div>
+                    </div>
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-3 form-label" for="mode">Mode of Internship</label>
+                      <div class="col-sm-9">
+                        <select class="form-select" name="mode" id="mode">
+                          <option selected>Choose...</option>
+                          <option value="virtual">Virtual</option>
+                          <option value="physical">Physical</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-3 form-label" for="place_of_posting">Place of Posting</label>
+                      <div class="col-sm-9">
+                        <input class="form-control" name="place_of_posting" id="place_of_posting" type="text" placeholder="In case of Physical Internship">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Stipend Details -->
+            <div class="col-lg-6 col-sm-12">
+              <div class="card">
+                <div class="card-header border-bottom" style="background-color: #c3decf;">
+                  <h3 style="font-size: x-large;" class="lead mb-0">Stipend Details</h3>
+                </div>
+                <div class="card-body">
+                  <p class="text-sm">Please note that the Salary Details is one of the most important criteria for the allotment of placement slot</p>
+                  <form id="stipend_details" class="Job Notification Form">
+                    <div class="mb-3">
+                      <label class="form-label" for="stipend">Stipend (Per Month) </label>
+                      <input class="form-control" name="stipend" id="stipend" type="number" aria-describedby="CTCinLPA">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="exampleBreakup">Provision for PPO (Pre Placement Offer) </label>
+                      <div class="input-group mb-3">
+                        <label class="input-group-text" for="provision_of_ppo">Options</label>
+                        <select class="form-select" name="provision_of_ppo" id="provision_of_ppo">
+                          <option selected>Choose...</option>
+                          <option value="ppoYes">yes</option>
+                          <option value="ppoNo">no</option>
+                          <!-- <option value="3">Three</option> -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="ctc">CTC details, if PPO is provided</label>
+                      <input class="form-control" name="ctc" id="ctc" aria-describedby="CTCBondDetails">
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <!-- Eligible Branches -->
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header border-bottom" style="background-color: #c3decf;">
+                  <h3 style="font-size: x-large;" class="lead mb-0">Eligible Courses and Disciplines</h3>
+                </div>
+                
+                <div class="card-body">
+                  <p class="text-sm">List of courses and disciplines offered at IIT (ISM) are shown below. Please check by clicking as per your requirement</p>
+                  <br>
+                  <form id="eligible_courses" class="form-horizontal">
+                    
+                    <div class="row">
+                      <label class="col-sm-3 form-label">4-Year B.Tech Programmes</label>
+                      <div class="col-sm-9">
+                        <small class="form-text my-1">Admission through Joint Entrance Examination (Advanced)</small>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Select All" id="btech4yy1">
+                          <label class="form-check-label" for="btech4yy1">
+                            Select All
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Civil Engineering" id="btech4yy2">
+                          <label class="form-check-label" for="btech4yy2">
+                            Civil Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Chemical Engineering" id="btech4yy3">
+                          <label class="form-check-label" for="btech4yy3">
+                            Chemical Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Computer Science and Engineering" id="btech4yy4">
+                          <label class="form-check-label" for="btech4yy4">
+                            Computer Science and Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Engineering Physics" id="btech4yy5">
+                          <label class="form-check-label" for="btech4yy5">
+                            Engineering Physics
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Electrical Engineering" id="btech4yy6">
+                          <label class="form-check-label" for="btech4yy6">
+                            Electrical Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Electronics & Communication Engineering" id="btech4yy7">
+                          <label class="form-check-label" for="btech4yy7">
+                            Electronics & Communication Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Electronics & Instrumentation Engineering" id="btech4yy8">
+                          <label class="form-check-label" for="btech4yy8">
+                            Electronics & Instrumentation Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Environmental Engineering" id="btech4yy9">
+                          <label class="form-check-label" for="btech4yy9">
+                            Environmental Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Mechanical Engineering" id="btech4yy10">
+                          <label class="form-check-label" for="btech4yy10">
+                            Mechanical Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Mineral Engineering" id="btech4yy11">
+                          <label class="form-check-label" for="btech4yy11">
+                            Mineral Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Mining Engineering" id="btech4yy12">
+                          <label class="form-check-label" for="btech4yy12">
+                            Mining Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Mining Machinery Engineering" id="btech4yy13">
+                          <label class="form-check-label" for="btech4yy13">
+                            Mining Machinery Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="Btech" value="Petroleum Engineering" id="btech4yy14">
+                          <label class="form-check-label" for="btech4yy14">
+                            Petroleum Engineering
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-bottom my-5 border-gray-200"></div>
+                    
+                    <div class="row">
+                      <label class="col-sm-3 form-label">5-Years Dual Degree/ Integrated M.Tech Programmes</label>
+                      <div class="col-sm-9">
+                        <small class="form-text my-1">Admission through Joint Entrance Examination (Advanced)</small>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="ddmtech" value="Select All" id="ddmtech1">
+                          <label class="form-check-label" for="ddmtech1">
+                            Select All
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="ddmtech" value="Computer Science and Engineering" id="ddmtech2">
+                          <label class="form-check-label" for="ddmtech2">
+                            Computer Science and Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="ddmtech" value="Mathematics & Computing" id="ddmtech3">
+                          <label class="form-check-label" for="ddmtech3">
+                            Mathematics & Computing
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="ddmtech" value="Applied Geology" id="ddmtech4">
+                          <label class="form-check-label" for="ddmtech4">
+                            Applied Geology
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="ddmtech" value="Applied Geophysics" id="ddmtech5">
+                          <label class="form-check-label" for="ddmtech5">
+                            Applied Geophysics
+                          </label>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="border-bottom my-5 border-gray-200"></div>
+
+                    <div class="row">
+                      <label class="col-sm-3 form-label">Skill Based Hiring</label>
+                      <div class="col-sm-9">
+                        <small class="form-text my-1">Students with certified technical expertise in the following skills (from Coursera, Udemy etc.)</small>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="skillbased" value="C, C++, Java, Python, etc." id="skillbased1">
+                          <label class="form-check-label" for="skillbased1">
+                            C, C++, Java, Python, etc.
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="skillbased" value="Full Stack Development (Frontend/Backend)" id="skillbased2">
+                          <label class="form-check-label" for="skillbased2">
+                            Full Stack Development (Frontend/Backend)
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="skillbased" value="AI/ ML/DL, Data Science" id="skillbased3">
+                          <label class="form-check-label" for="skillbased3">
+                            AI/ ML/DL, Data Science
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="skillbased" value="Business/Data Analytics, Product Management" id="skillbased4">
+                          <label class="form-check-label" for="skillbased4">
+                            Business/Data Analytics, Product Management
+                          </label>
+                        </div>
+                        <div class="input-material-group mb-3">
+                          <input class="input-material" id="other-skill" type="" name="other-skill" required>
+                          <label class="label-material" for="other-skill">other</label>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="border-bottom my-5 border-gray-200"></div>
+
+                    <div class="row">
+                      <label class="col-sm-3 form-label">3-Year M.Sc Tech Programmes</label>
+                      <div class="col-sm-9">
+                        <small class="form-text my-1">Admitted through JAM</small>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="msctech3yr" value="Select All" id="msc3yr1">
+                          <label class="form-check-label" for="msc3yr1">
+                            Select All
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="msctech3yr" value="Applied Geology" id="msc3yr2">
+                          <label class="form-check-label" for="msc3yr2">
+                            Applied Geology
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="msctech3yr" value="Applied Geophysics" id="msc3yr3">
+                          <label class="form-check-label" for="msc3yr3">
+                            Applied Geophysics
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-bottom my-5 border-gray-200"></div>
+                    
+                    <!-- 2-yr mtech programme -->
+                    <div class="row">
+                      <label class="col-sm-3 form-label">2-Year M.Tech Programmes</label>
+                      <div class="col-sm-9">
+                        <small class="form-text my-1">Admitted through GATE</small>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Select All" id="mtech2yr1">
+                          <label class="form-check-label" for="mtech2yr1">
+                            Select All
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Geo Exploration" id="mtech2yr2">
+                          <label class="form-check-label" for="mtech2yr2">
+                            Geo Exploration
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Engineering Geology" id="mtech2yr3">
+                          <label class="form-check-label" for="mtech2yr3">
+                            Engineering Geology
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Earthquake Science & Engineering" id="mtech2yr4">
+                          <label class="form-check-label" for="mtech2yr4">
+                            Earthquake Science & Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Chemical Engineering" id="mtech2yr5">
+                          <label class="form-check-label" for="mtech2yr5">
+                            Chemical Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Geotechnical Engineering" id="mtech2yr6">
+                          <label class="form-check-label" for="mtech2yr6">
+                            Geotechnical Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Structural Engineering" id="mtech2yr7">
+                          <label class="form-check-label" for="mtech2yr7">
+                            Structural Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Computer Science & Engineering" id="mtech2yr8">
+                          <label class="form-check-label" for="mtech2yr8">
+                            Computer Science & Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Computer Science & Engineering with Specialization in Information Security" id="mtech2yr9">
+                          <label class="form-check-label" for="mtech2yr9">
+                            Computer Science & Engineering with Specialization in Information Security
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Data Analytics" id="mtech2yr10">
+                          <label class="form-check-label" for="mtech2yr10">
+                            Data Analytics
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Power System Engineering" id="mtech2yr11">
+                          <label class="form-check-label" for="mtech2yr11">
+                            Power System Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Power Electronics & Electrical Drives" id="mtech2yr12">
+                          <label class="form-check-label" for="mtech2yr12">
+                            Power Electronics & Electrical Drives
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Communication & Signal Processing" id="mtech2yr13">
+                          <label class="form-check-label" for="mtech2yr13">
+                            Communication & Signal Processing
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Optoelctronics & Optical Communication Engineering" id="mtech2yr14">
+                          <label class="form-check-label" for="mtech2yr14">
+                            Optoelctronics & Optical Communication Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="RF and Microwave Engineering" id="mtech2yr15">
+                          <label class="form-check-label" for="mtech2yr15">
+                            RF and Microwave Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="VLSI Design" id="mtech2yr16">
+                          <label class="form-check-label" for="mtech2yr16">
+                            VLSI Design
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Environmental Science & Engineering" id="mtech2yr17">
+                          <label class="form-check-label" for="mtech2yr17">
+                            Environmental Science & Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Mineral Engineering" id="mtech2yr18">
+                          <label class="form-check-label" for="mtech2yr18">
+                            Mineral Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Fuel Engineering" id="mtech2yr19">
+                          <label class="form-check-label" for="mtech2yr19">
+                            Fuel Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Mining Machinery Engineering" id="mtech2yr20">
+                          <label class="form-check-label" for="mtech2yr20">
+                            Mining Machinery Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Machine Design" id="mtech2yr21">
+                          <label class="form-check-label" for="mtech2yr21">
+                            Machine Design
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Maintenance Engineering & Tribology" id="mtech2yr22">
+                          <label class="form-check-label" for="mtech2yr22">
+                            Maintenance Engineering & Tribology
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Manufacturing Engineering" id="mtech2yr23">
+                          <label class="form-check-label" for="mtech2yr23">
+                            Manufacturing Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Thermal Engineering" id="mtech2yr24">
+                          <label class="form-check-label" for="mtech2yr24">
+                            Thermal Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Industrial Engineering & Management" id="mtech2yr25">
+                          <label class="form-check-label" for="mtech2yr25">
+                            Industrial Engineering & Management
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Geomatics" id="mtech2yr26">
+                          <label class="form-check-label" for="mtech2yr26">
+                            Geomatics
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Mining Engineering" id="mtech2yr27">
+                          <label class="form-check-label" for="mtech2yr27">
+                            Mining Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Opencast Mining" id="mtech2yr28">
+                          <label class="form-check-label" for="mtech2yr28">
+                            Opencast Mining
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Tunneling & Underground Space Technology" id="mtech2yr29">
+                          <label class="form-check-label" for="mtech2yr29">
+                            Tunneling & Underground Space Technology
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Petroleum Engineering" id="mtech2yr30">
+                          <label class="form-check-label" for="mtech2yr30">
+                            Petroleum Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mtech2yr" value="Pharmaceutical Science and Engineering" id="mtech2yr31">
+                          <label class="form-check-label" for="mtech2yr31">
+                            Pharmaceutical Science and Engineering
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-bottom my-5 border-gray-200"></div>
+
+                    
+                    <!-- MBA 2 yr -->
+                    <div class="row">
+                      <label class="col-sm-3 form-label">2-Years MBA Programme</label>
+                      <div class="col-sm-9">
+                        <small class="form-text my-1">Admitted through CAT</small>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mba2yr" value="Select All" id="mba2yr1">
+                          <label class="form-check-label" for="mba2yr1">
+                            Select All
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mba2yr" value="General" id="mba2yr2">
+                          <label class="form-check-label" for="mba2yr2">
+                            General
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mba2yr" value="Marketing" id="mba2yr3">
+                          <label class="form-check-label" for="mba2yr3">
+                            Marketing
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mba2yr" value="Operations" id="mba2yr4">
+                          <label class="form-check-label" for="mba2yr4">
+                            Operations
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mba2yr" value="Finance" id="mba2yr5">
+                          <label class="form-check-label" for="mba2yr5">
+                            Finance
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mba2yr" value="Human Resources" id="mba2yr6">
+                          <label class="form-check-label" for="mba2yr6">
+                            Human Resources
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="mba2yr" value="Business Analytics" id="mba2yr7">
+                          <label class="form-check-label" for="mba2yr7">
+                            Business Analytics
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-bottom my-5 border-gray-200"></div>
+
+                    <!-- Msc 2 year -->
+                    <div class="row">
+                      <label class="col-sm-3 form-label">2-Years M.sc Programme</label>
+                      <div class="col-sm-9">
+                        <small class="form-text my-1">Admitted through CAT</small>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="msc2yr" value="Select All" id="msc2yr1">
+                          <label class="form-check-label" for="msc2yr1">
+                            Select All
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="msc2yr" value="Chemistry" id="msc2yr2">
+                          <label class="form-check-label" for="msc2yr2">
+                            Chemistry
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="msc2yr" value="Mathematics and Computing" id="msc2yr3">
+                          <label class="form-check-label" for="msc2yr3">
+                            Mathematics and Computing
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="msc2yr" value="Physics" id="msc2yr4">
+                          <label class="form-check-label" for="msc2yr4">
+                            Physics
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-bottom my-5 border-gray-200"></div>
+
+                    <!-- Phd programs -->
+                    <div class="row">
+                      <label class="col-sm-3 form-label">PhD Programmes</label>
+                      <div class="col-sm-9">
+                        <small class="form-text my-1">Admitted through GATE/NET</small>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Select All" id="phd1">
+                          <label class="form-check-label" for="phd1">
+                            Select All
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Civil Engineering" id="phd2">
+                          <label class="form-check-label" for="phd2">
+                            Civil Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Chemical Engineering" id="phd2">
+                          <label class="form-check-label" for="phd2">
+                            Chemical Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Chemical Engineering" id="phd3">
+                          <label class="form-check-label" for="phd3">
+                            Chemical Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Computer Science and Engineering" id="phd4">
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Physics" id="phd5">
+                          <label class="form-check-label" for="phd5">
+                            Physics
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Electrical Engineering" id="phd6">
+                          <label class="form-check-label" for="phd6">
+                            Electrical Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Electronic Engineering" id="phd7">
+                          <label class="form-check-label" for="phd7">
+                            Electronic Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Environmental Engineering" id="phd8">
+                          <label class="form-check-label" for="phd8">
+                            Environmental Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Mechanical Engineering" id="phd9">
+                          <label class="form-check-label" for="phd9">
+                            Mechanical Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Fuel, Minerals & Metallurgical Engineering" id="phd10">
+                          <label class="form-check-label" for="phd10">
+                            Fuel, Minerals & Metallurgical Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Mining Engineering" id="phd11">
+                          <label class="form-check-label" for="phd11">
+                            Mining Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Mining Machinery Engineering" id="phd12">
+                          <label class="form-check-label" for="phd12">
+                            Mining Machinery Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Petroleum Engineering" id="phd13">
+                          <label class="form-check-label" for="phd13">
+                            Petroleum Engineering
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Applied Geology" id="phd14">
+                          <label class="form-check-label" for="phd14">
+                            Applied Geology
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Applied Geophysics" id="phd15">
+                          <label class="form-check-label" for="phd15">
+                            Applied Geophysics
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Mathematics & Computing" id="phd16">
+                          <label class="form-check-label" for="phd16">
+                            Mathematics & Computing
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Chemistry" id="phd17">
+                          <label class="form-check-label" for="phd17">
+                            Chemistry
+                          </label>
+                        </div>
+                        <div class="form-check my-1">
+                          <input class="form-check-input" type="checkbox" name="phd" value="Humanities & Social Sciences" id="phd18">
+                          <label class="form-check-label" for="phd18">
+                            Humanities & Social Sciences
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-bottom my-5 border-gray-200"></div>
+
+                    <div class="row">
+                      <label class="col-sm-3 form-label">Eligibility criteria, if any </label>
+                      <div class="col-sm-9">
+                        <small class="form-text my-1">If no eligibility criteria is applicable then please write "NA"</small>
+                        <div class="input-material-group mb-3">
+                          <input class="input-material" id="other-skill" type="" name="other-skill" required>
+                          <label class="label-material" for="other-skill"></label>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- SELECTION PROCESS -->
+            <div class="col-lg-6 col-sm-12">
+              <div class="card">
+                <div class="card-header border-bottom" style="background-color: #c3decf;">
+                  <h3 style="font-size: x-large;" class="lead mb-0">Selection Process</h3>
+                </div>
+                <div class="card-body">
+                  <form id="selection_process">
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-5 form-label" for="inputHorizontalResume-Shortlisting">Resume Shortlisting</label>
+                      <div class="col-sm-7">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="resume_shorlist" id="resyes">
+                          <label class="form-check-label" for="resyes">
+                            yes
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="resume_shorlist" id="resno" checked>
+                          <label class="form-check-label" for="resno">
+                            no
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-5 form-label" for="inputHorizontalType-of-Test">Type of Test</label>
+                      <div class="col-sm-7">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" value="Technical" name="type_of_test" id="tot1">
+                          <label class="form-check-label" for="tot1">
+                            Technical
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" value="Aptitude" name="type_of_test" id="tot2">
+                          <label class="form-check-label" for="tot2">
+                            Aptitude
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" value="Both" name="type_of_test" id="tot3">
+                          <label class="form-check-label" for="tot3">
+                            Both
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" value="None" name="type_of_test" id="tot4">
+                          <label class="form-check-label" for="tot4">
+                            None
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-5 form-label" for="inputHorizontalResume-Shortlisting">Other Qualification Rounds</label>
+                      <div class="col-sm-7">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="qual_round[]" value="GD" id="qual1">
+                          <label class="form-check-label" for="qual1">
+                            GD
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="qual_round[]" value="Case Study" id="qual2">
+                          <label class="form-check-label" for="qual2">
+                            Case Study
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="qual_round[]" value="Interview" id="qual3">
+                          <label class="form-check-label" for="qual3">
+                            Interview
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-5 form-label" for="inputHorizontalResume-Shortlisting">Total Number of Rounds</label>
+                      <div class="col-sm-7">
+                        <div class="input-material-group mb-3">
+                          <input class="input-material" id="other-skill" type="number" name="other-skill" required>
+                          <!-- <label class="label-material" for="other-skill">round</label> -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row gy-2 mb-4">
+                      <label class="col-sm-5 form-label" for="inputHorizontalResume-Shortlisting">Number of offers available for IIT(ISM) students (Range would be sufficient)</label>
+                      <div class="col-sm-7">
+                        <div class="input-material-group mb-3">
+                          <input class="input-material" id="other-skill" type="number" name="other-skill" required>
+                          <!-- <label class="label-material" for="other-skill">Number of offers </label> -->
+                        </div>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- Job Notification Form  -->
+            <button id="submit" type="button" class="btn btn-lg btn-block btn-primary">SUBMIT</button>
+
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <!-- JavaScript files-->
+    <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
+    <!-- <script src="vendor/just-validate/js/just-validate.min.js"></script> -->
+    <!-- <script src="vendor/choices.js/public/assets/scripts/choices.min.js"></script> -->
+    <!-- <script src="vendor/overlayscrollbars/js/OverlayScrollbars.min.js"></script> -->
+    <!-- <script src="js/charts-home.js"></script> -->
+    <!-- Main File-->
+    <!-- <script src="js/front.js"></script> -->
+
+
+    <script>
+        var dir = window.location.origin + "/static/";
+        exts = [
+            {
+                tag: "script",
+                src: dir + "vendor/bootstrap/js/bootstrap.bundle.min.js",
+            },
+            {
+                tag: "script",
+                src: dir + "vendor/chart.js/Chart.min.js",
+            },
+            {
+                tag: "script",
+                src: dir + "vendor/just-validate/js/just-validate.min.js",
+            },
+            {
+                tag: "script",
+                src: dir + "vendor/choices.js/public/assets/scripts/choices.min.js",
+            },
+            {
+                tag: "script",
+                src: dir + "vendor/overlayscrollbars/js/OverlayScrollbars.min.js",
+            },
+            {
+                tag: "script",
+                src: dir + "js/charts-home.js",
+            },
+            {
+                tag: "script",
+                src: dir + "js/front.js",
+            },
+        ];
+        console.log(exts);
+        load_static_assets(exts, 'body');
+    </script>
+
+
+    <script>
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to BootstrapTemple website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+      
+      
+    </script>
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <script>
+      
+      formsId = ['poc_info',  'company_overview', 'internship_duration', 'intern_profile',  'stipend_details', 'eligible_courses', 'selection_process'];
+      
+      // formsId.forEach((formId) => {
+      //   form = document.getElementById(formId);
+
+      //   form.addEventListener('submit', (evt) => {
+      //     evt.preventDefault();
+      //     console.log(form.elements);
+      //   });
+      // });
+
+      let infData = {};
+      but = document.getElementById('submit');
+      but.addEventListener('click', (e) => {
+        formsId.forEach((formId) => {
+          form = document.getElementById(formId);
+          infData[formId] = {};
+          for(key in form.elements) infData[formId][key] = form.elements[key].value;
+        });
+        console.log(infData);
+      });
+
+
+      
+
+
+    </script>
+
+  </body>
+</html>
