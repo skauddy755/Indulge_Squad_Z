@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello world!</title>
+  </head>
+  <body>
+    <h1>User List</h1>
+    <ul>
+      {{#each users}}
+      <li>Name: {{this.name}}</li>
+      <li>Age: {{this.age}}</li>
+      <br />
+      {{/each}}
+    </ul>
+
+    <h1>Some test data</h1>
+    <h2 id="dd">{{testData}}</h2>
+    <h3 id="pp"></h3>
+  </body>
+
+  <script>
+    let obj = JSON.parse(document.getElementById('dd').innerText);
+    document.getElementById('pp').innerText = obj.x;
+  </script>
+</html>

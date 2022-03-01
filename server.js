@@ -64,7 +64,7 @@ app.use(function(req, res, next){
 // Serve static assets and use routes:
 // ================================================================
 app.use("/static/", express.static(path.join(__dirname, 'public', 'assets1')));
-
+app.use("/docs/", express.static(path.join(__dirname, 'public', 'docs')));
 // Use routes:
 //-----------------------------------------------------------------
 app.use("/test", require('./routes/test'));

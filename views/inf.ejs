@@ -607,8 +607,8 @@
                           </label>
                         </div>
                         <div class="input-material-group mb-3">
-                          <input class="input-material" id="other-skill" type="" name="other-skill" required>
-                          <label class="label-material" for="other-skill">other</label>
+                          <input class="input-material" id="other_skill" type="text" name="other_skill" required>
+                          <label class="label-material" for="other_skill">other</label>
                         </div>
                         
                       </div>
@@ -1070,13 +1070,13 @@
                       <label class="col-sm-5 form-label" for="inputHorizontalResume-Shortlisting">Resume Shortlisting</label>
                       <div class="col-sm-7">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="resume_shorlist" id="resyes">
+                          <input class="form-check-input" type="radio" name="resume_shorlist" value="yes" id="resyes">
                           <label class="form-check-label" for="resyes">
                             yes
                           </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="resume_shorlist" id="resno" checked>
+                          <input class="form-check-input" type="radio" name="resume_shorlist" value="no" id="resno" checked>
                           <label class="form-check-label" for="resno">
                             no
                           </label>
@@ -1118,19 +1118,19 @@
                       <label class="col-sm-5 form-label" for="inputHorizontalResume-Shortlisting">Other Qualification Rounds</label>
                       <div class="col-sm-7">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="qual_round[]" value="GD" id="qual1">
+                          <input class="form-check-input" type="checkbox" name="qual_round" value="GD" id="qual1">
                           <label class="form-check-label" for="qual1">
                             GD
                           </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="qual_round[]" value="Case Study" id="qual2">
+                          <input class="form-check-input" type="checkbox" name="qual_round" value="Case Study" id="qual2">
                           <label class="form-check-label" for="qual2">
                             Case Study
                           </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="qual_round[]" value="Interview" id="qual3">
+                          <input class="form-check-input" type="checkbox" name="qual_round" value="Interview" id="qual3">
                           <label class="form-check-label" for="qual3">
                             Interview
                           </label>
@@ -1139,20 +1139,20 @@
                     </div>
 
                     <div class="row gy-2 mb-4">
-                      <label class="col-sm-5 form-label" for="inputHorizontalResume-Shortlisting">Total Number of Rounds</label>
+                      <label class="col-sm-5 form-label" for="tot_num_rounds">Total Number of Rounds</label>
                       <div class="col-sm-7">
                         <div class="input-material-group mb-3">
-                          <input class="input-material" id="other-skill" type="number" name="other-skill" required>
+                          <input class="input-material" id="tot_num_rounds" type="number" name="tot_num_rounds" required>
                           <!-- <label class="label-material" for="other-skill">round</label> -->
                         </div>
                       </div>
                     </div>
 
                     <div class="row gy-2 mb-4">
-                      <label class="col-sm-5 form-label" for="inputHorizontalResume-Shortlisting">Number of offers available for IIT(ISM) students (Range would be sufficient)</label>
+                      <label class="col-sm-5 form-label" for="num_offers">Number of offers available for IIT(ISM) students (Range would be sufficient)</label>
                       <div class="col-sm-7">
                         <div class="input-material-group mb-3">
-                          <input class="input-material" id="other-skill" type="number" name="other-skill" required>
+                          <input class="input-material" id="num_offers" type="number" name="num_offers" required>
                           <!-- <label class="label-material" for="other-skill">Number of offers </label> -->
                         </div>
                       </div>
@@ -1162,8 +1162,31 @@
                 </div>
               </div>
             </div>
+
+            <!-- Confirmation Form -->
+            <div class="col-lg-6 col-sm-12">
+              <div class="card">
+                <div class="card-header border-bottom" style="background-color: #c3decf;">
+                  <h3 style="font-size: x-large;" class="lead mb-0">CONFIRM CHANGES</h3>
+                </div>
+                <div class="card-body">
+                  <form action="/company/<%= userId %>/inf/create" id="selection_process" method="POST">
+                    <p class="lead">
+                      The INF submitted can be edited later. However, the changes will be permanently saved only after approval from CDC-SCPT.
+                    </p>
+                    <input id="infData" type="text" name="infData" style="display: none;">
+                    <button id="submit" type="button" class="btn btn-lg btn-block btn-secondary">Save Changes</button>
+                    <button type="submit" class="btn btn-lg btn-block btn-primary">SUBMIT</button>
+                    <p id="mssg">
+                      <span style="color:#570814">Please save the changes before submitting</span>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+
             <!-- Job Notification Form  -->
-            <button id="submit" type="button" class="btn btn-lg btn-block btn-primary">SUBMIT</button>
+            
 
 
           </div>
@@ -1248,29 +1271,55 @@
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-
     <script>
       
-      formsId = ['poc_info',  'company_overview', 'internship_duration', 'intern_profile',  'stipend_details', 'eligible_courses', 'selection_process'];
-      
-      // formsId.forEach((formId) => {
-      //   form = document.getElementById(formId);
+      formsId = [
+        'poc_info',
+        'company_overview',
+        'internship_duration',
+        'intern_profile',
+        'stipend_details',
+        'eligible_courses',
+        'selection_process' 
+      ];
 
-      //   form.addEventListener('submit', (evt) => {
-      //     evt.preventDefault();
-      //     console.log(form.elements);
-      //   });
-      // });
+      mssg = document.getElementById('mssg');
+      
+      let serializeForm = (formElement) => {
+        const formData = {};
+        const inputs = formElement.elements;  
+        for (let i = 0; i < inputs.length; i++) {
+          if(inputs[i].name!=="")
+            formData[inputs[i].name] = (inputs[i].type === "checkbox") ? [] : inputs[inputs[i].name].value;
+        }
+        return formData;
+      }
+      let extractChecks = (formData) => {
+        for(key in formData){
+          if(typeof(formData[key]) === 'object') {
+              v = document.getElementsByName(key);
+              v = Array.prototype.slice.call(v);
+              formData[key] = v.filter(x => x.checked).map(x => x.value);
+          }
+        }
+        // console.log(formData);
+      }
 
       let infData = {};
       but = document.getElementById('submit');
       but.addEventListener('click', (e) => {
         formsId.forEach((formId) => {
           form = document.getElementById(formId);
-          infData[formId] = {};
-          for(key in form.elements) infData[formId][key] = form.elements[key].value;
+          formData = serializeForm(form);
+          extractChecks(formData);
+          infData[formId] = formData;
         });
         console.log(infData);
+
+        req = document.getElementById('infData');
+        req.value = JSON.stringify(infData);
+
+        mssg.innerHTML = `<span style="color:#094f36">Changes saved, ready to submit</span>`
       });
 
 

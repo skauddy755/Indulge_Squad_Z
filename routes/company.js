@@ -23,14 +23,14 @@ const middlewareObj     = require('../middleware/index');
 
 const router = express.Router();
 
-router.get('/:userId/dashboard', (req, res) => {
+router.get('/:userId/dashboard', middlewareObj.isLoggedIn, middlewareObj.checkOwnership, (req, res) => {
     page = "dashboard_company.ejs";
     Company.findById(req.user.detailsId, (err, item) => {
         if(err) res.redirect('/index/home');
         else {
             data = item;
             console.log(page, data);
-            res.render(page, {detailsData: data});
+            res.render(page, {detailsData: data, userId: req.params.userId});
         }
     });
 })
@@ -43,12 +43,23 @@ router.get('/:userId/dashboard', (req, res) => {
 //     res.render('')
 // })
 
-router.get('/:userId/inf/create', (req, res) => {
-    res.render('inf.ejs');
+router.get('/:userId/inf/create', middlewareObj.isLoggedIn, middlewareObj.checkOwnership, (req, res) => {
+    res.render('inf.ejs' , {userId: req.params.userId});
 })
 
-router.post('/:userId/inf/create', (req, res) => {
+router.post('/:userId/inf/create', middlewareObj.checkOwnership, (req, res) => {
     console.log(req.body);
+    infData = JSON.parse(req.body.infData);
+    console.log(infData);
+
+    let inf = new Inf({});
+    for(key in infData) inf[key] = infData[key];
+    inf.save((err) => {
+        if(err)
+            res.redirect(`/company/${req.params.userId}/inf/create`);
+        else
+            res.redirect(`/company/${req.params.userId}/dashboard`);
+    });
 })
 
 // router.get(':userId/inf/edit/:infId', (req, res) => {
