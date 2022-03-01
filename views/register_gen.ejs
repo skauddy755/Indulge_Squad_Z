@@ -7,21 +7,27 @@
     <title>Register</title>
 </head>
 <body>
-    <h1>Register - Company</h1>
-    <form action="/index/register_company" method="POST">
+    <h1>Register - Admin</h1>
+    <form action="/index/register_admin" method="POST">
 
         <input type="text" name="username" placeholder="username">
         <input type="password" name="password" placeholder="password">
-        <input type="password" name="cpassword" placeholder="cpassword">
+        <input type="password" name="cpassword" placeholder="confirm password">
 
         <input type="email" name="email" placeholder="email">
         <input type="tel" name="contact" placeholder="contact">
-        <input type="text" name="companyName" placeholder="companyName">
-        
+
         <button type="submit">Register</button>
     </form>
 </body>
 </html> -->
+
+
+
+
+
+
+
 
 
 <!DOCTYPE html>
@@ -96,45 +102,31 @@ body{
     <div class="shadow-lg bg-white rounded" style="width: 70vw;height: 80vh;display: flex;position: fixed;">
         <img src="https://i0.wp.com/opportunitycell.com/wp-content/uploads/2021/07/iitdhanbad.png?fit=400%2C400&ssl=1" alt="#" style="width: 40vw; padding: 100px;">
       <div class="container mx-4" style="display: flex;flex-direction: column;justify-content: center;">
-        <form action="/index/register_company" method="POST">
+        <form action="/index/register" method="POST">
             
             <div class="jumbotron">
                 <h2>Company Registration Portal</h2>
                 <p class="lead">CDC-SCPT, IIT (ISM) Dhanbad</p>
             </div>
-            <label for="email" class="form-label">Email</label>
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1"><ion-icon name="mail"></ion-icon></span>
-                <input id="email" name="email" type="email" class="form-control" placeholder="someone@service.com" aria-label="Email" aria-describedby="basic-addon1">
-            </div>
-            <label for="contact" class="form-label">Contact</label>
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon2"><ion-icon name="call"></ion-icon></span>
-                <input id="contact" name="contact" type="text" class="form-control" placeholder="+00 0000000000" aria-label="password" aria-describedby="basic-addon1">
-            </div>
-            <label for="companyName" class="form-label">Company Name</label>
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon2"><ion-icon name="home"></ion-icon></span>
-                <input id="companyName" name="companyName" type="text" class="form-control" placeholder="Company Name" aria-label="password" aria-describedby="basic-addon1">
-            </div>
-            <label for="cpassword" class="form-label">Username</label>
-            <div class="input-group">
-              <span class="input-group-text" id="basic-addon2"><ion-icon name="person"></ion-icon></span>
-              <input id="username" name="username" type="username" class="form-control" placeholder="Enter Username" aria-label="password" aria-describedby="basic-addon1">
-            </div>
-            <label for="password" class="form-label">Password</label>
-            <div class="input-group">
-              <span class="input-group-text" id="basic-addon2"><ion-icon name="key"></ion-icon></span>
-              <input id="password" name="password" type="password" class="form-control" placeholder="Enter password" aria-label="password" aria-describedby="basic-addon1">
-            <span class="input-group-text" id="basic-addon3"><ion-icon name="eye"></ion-icon></span>
-          </div>
-          <label for="cpassword" class="form-label">Confirm Password</label>
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon2"><ion-icon name="key"></ion-icon></span>
-            <input id="cpassword" name="cpassword" type="password" class="form-control" placeholder="Enter password again" aria-label="password" aria-describedby="basic-addon1">
-            <span class="input-group-text" id="basic-addon3"><ion-icon name="eye"></ion-icon></span>
-          </div>
-          <button class="btn btn-primary d-grid gap-2 col-12 my-1 mt-1" type="submit">Register</button>
+            <label style="font-size: x-large;" class="form-label">Select the type of User</label>
+            
+                <div class="form-check ">
+                    <input style="font-size: x-large;" class="form-check-input" type="radio" name="userType" value="Admin" id="userType1">
+                    <label style="font-size: x-large;" class="form-check-label" for="userType1">Admin</label>
+                </div>
+                <div class="form-check">
+                    <input style="font-size: x-large;" class="form-check-input" type="radio" name="userType" value="Company" id="userType2">
+                    <label style="font-size: x-large;" class="form-check-label" for="userType2">Company</label>
+                </div>
+                <div class="form-check">
+                    <input style="font-size: x-large;" class="form-check-input" type="radio" name="userType" value="Student" id="userType3">
+                    <label style="font-size: x-large;" class="form-check-label" for="userType3">Student</label>
+                </div>
+                
+            
+            
+          <button class="btn btn-primary d-grid gap-2 col-12 my-1 mt-2" type="submit">Register</button>
+          <a href="/index/login" style="text-decoration: none;">Already have account? Login</a>
           
         </form>
       </div>
@@ -144,4 +136,3 @@ body{
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
-

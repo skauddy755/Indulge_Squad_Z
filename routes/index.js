@@ -61,6 +61,17 @@ router.get('/dashboard/:userId', middlewareObj.isLoggedIn, middlewareObj.checkOw
 // REGISTRATION ROUTES:
 // ===================================================================
 
+router.get('/register', (req, res) => {
+    res.render('register_gen.ejs');
+})
+
+router.post('/register', (req, res) => {
+    let userType = req.body.userType;
+    if(userType === "Admin") res.redirect('/index/register_admin');
+    else if(userType === "Company") res.redirect('/index/register_company');
+    else if(userType === "Student") res.redirect('/index/register_student');
+    else res.redirect('/register');
+})
 
 // Admin Registration:
 // -------------------------------------------------------------------
