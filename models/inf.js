@@ -4,8 +4,6 @@ var mongoose 				= require("mongoose"),
 const USER_ROLES = require('../config/webKeys').USER_ROLES
 
 var infSchema = new mongoose.Schema({
-	userId: String, // id of user schema
-    companyId: String, // id of company schema
 
     date_of_creation: Date,
     last_modified: Date,

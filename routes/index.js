@@ -23,6 +23,10 @@ const middlewareObj     = require('../middleware/index');
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+    res.redirect('/index/home');
+})
+
 router.get('/home', (req, res) => {
     res.render('homepage.ejs');
 })

@@ -65,7 +65,7 @@ router.get('/genpdf', (req, res) => {
             c: [7, 5, 5]
         }
     }
-    obj = JSON.stringify(obj);
+    // obj = JSON.stringify(obj);
     let document = {
         html: html,
         data: {

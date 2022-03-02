@@ -23,7 +23,7 @@ const app = new express();
 // ================================================================
 // MONGO-DB SETUP:
 // ================================================================
-const mongo_uri = process.env.MONGO_URI_PROD;
+const mongo_uri = process.env.MONGO_URI_LOCAL;
 console.log(mongo_uri);
 console.log(process.env.NODE_ENV);
 mongoose.connect(mongo_uri, {useUnifiedTopology:true, useNewUrlParser:true})

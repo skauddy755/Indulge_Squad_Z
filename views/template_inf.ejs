@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inf <%= infData._id %></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div style="background-color: #c3decf; border-radius: 10px;" class="mt-4 pt-2">
+                <h1 style="padding: 20px; text-align: center;" class="display-4">Internship Notification Form</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="border-radius: 10px;" class="card mt-3 pt-2">
+                <div class="card-body">
+                    <h1 style="font-size: 3em" class="display-4">HR Info</h1>
+                    <p class="lead">
+                        <b>Email Address of POC-1: </b> <%= infData.poc_info.email_poc1 %> <br>
+                        <b>Name of POC-1: </b> <% infData.poc_info.name_poc1 %><br>
+                        <b>Designation of POC-1: </b> <%= infData.poc_info.designation_poc1 %> <br>
+                        <b>Mobile Number of POC-1: </b> <%= infData.poc_info.mob_poc1 %> <br>
+                        <b>Email Address of POC-2: </b> <%= infData.poc_info.email_poc2 %> <br>
+                        <b>Name of POC-2: </b> <%= infData.poc_info.name_poc2 %> <br>
+                        <b>Designation of POC-2: </b> <%= infData.poc_info.designation_poc2 %> <br>
+                        <b>Mobile Number of POC-2: </b> <%= infData.poc_info.mob_poc2 %> <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="border-radius: 10px;" class="card mt-3 pt-2">
+                <div class="card-body">
+                    <h1 style="font-size: 3em" class="display-4">Company Overview</h1>
+                    <p class="lead">
+                        <b>Company Name: </b> <%= infData.company_overview.companyName %> <br>
+                        <b>Website: </b> <%= infData.company_overview.website %> <br>
+                        <b>industry Sector: </b> <%= infData.company_overview.industrySector %> <br>
+                        <b>Other: </b> <%= infData.company_overview.other_skill %> <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="border-radius: 10px;" class="card mt-3 pt-2">
+                <div class="card-body">
+                    <h1 style="font-size: 3em" class="display-4">Internship Duration</h1>
+                    <p class="lead">
+                        <b>Internship Duration: </b> <%= infData.internship_duration %> <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="border-radius: 10px;" class="card mt-3 pt-2">
+                <div class="card-body">
+                    <h1 style="font-size: 3em" class="display-4">HR Info</h1>
+                    <p class="lead">
+                        <b>Job Designation: </b> <%= infData.intern_profile.job_designation %> <br>
+                        <b>Job Description: </b> <%= infData.intern_profile.job_desc %> <br>
+                        <b>Mode of Internship: </b> <%= infData.intern_profile.mode %> <br>
+                        <b>Place of Posting: </b> <%= infData.intern_profile.place_of_posting %> <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="border-radius: 10px;" class="card mt-3 pt-2">
+                <div class="card-body">
+                    <h1 style="font-size: 3em" class="display-4">Intern Profile</h1>
+                    <p class="lead">
+                        <b>Stipend (per month): </b> <%= infData.stipend_details.stipend %> <br>
+                        <b>Provision for PPO (Pre Placement Offer): </b> <%= infData.stipend_details.provision_of_ppo %> <br>
+                        <b>CTC details, if PPO is provided: </b> <%= infData.stipend_details.ctc %> <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="border-radius: 10px;" class="card mt-3 pt-2">
+                <div class="card-body">
+                    <h1 style="font-size: 3em" class="display-4">Eligible Courses and Disciplines</h1>
+                    <p class="lead">
+                        <b>Eligibility criteria, if any : </b> <%= infData.eligible_courses["other-skill"] %> <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="border-radius: 10px;" class="card mt-3 pt-2">
+                <div class="card-body">
+                    <h1 style="font-size: 3em" class="display-4">Selection Process</h1>
+                    <p class="lead">
+                        <b>Resume Shortlisting: </b> <%= infData.selection_process.resume_shortlist %> <br>
+                        <b>Type of Test: </b> <%= infData.selection_process["type-of-test"] %> <br>
+                        <b>Other Qualification Rounds: </b> <%= infData.selection_process.qual_round %> <br>
+                        <b>Number of offers available for IIT(ISM) students: </b> <%= infData.selection_process.num_offers %> <br>
+                        <b>Total Number of Rounds: </b> <%= infData.selection_process.tot_num_rounds %> <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
